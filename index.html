@@ -24,9 +24,11 @@
   <body>
     <img src = "src/weather images.jpg"/>
     <div class="container">
+      
+          <form id="search-bar">
       <div class = "row">
-        <div class = "col-10">
-      <form id="search-bar">
+        <div class = "col-9">
+   
         <input type="text" autocomplete="off" placeholder="Enter your location" autofocus="on" id="search-input" class = "search-input"/>
         <i class="fa-solid fa-location-dot geolocation" id= "geolocation"></i>
       </div>
@@ -90,74 +92,20 @@
   </div>
 </div>
       </p>
-      <div class="row row-cols-1 mb-0 row-cols-6 g-4 card-design">
-  <div class="col">
-    <div class="card h-100">
-      
-      <div class="card-body">
-        <h5 class="card-title">Dec 30</h5>
-        <hr/>
-        <p class="card-text forecast">Partly Sunny <br/>
-          <i class="fa-solid fa-cloud-sun"></i>
-          <br/> 49°|43°
-        </p>
-      </div>
-    </div>
-  </div>
-   <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Dec 31</h5>
-        <hr/>
-        <p class="card-text forecast">Cloudy
-          <br/>
-          <i class="fa-solid fa-cloud"></i> <br/>
-          55°|48°
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-     
-      <div class="card-body">
-        <h5 class="card-title">Jan 1</h5>
-        <hr/>
-        <p class="card-text forecast">Cloudy <br/> 
-          <i class="fa-solid fa-cloud"></i>
-          <br/>
-        56°|50°
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      
-      <div class="card-body">
-        <h5 class="card-title">Jan 2</h5>
-        <hr/>
-        <p class="card-text forecast"> Rain
-          <br/> <i class="fa-solid fa-cloud-showers-heavy rain-icon"></i> <br/>
-          57°|29°</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      
-      <div class="card-body">
-        <h5 class="card-title">Jan 3</h5>
-        <hr/>
-        <p class="card-text forecast">Snow
-          <br/> <i class="fa-solid fa-snowflake snow-icon"></i>
-          <br/> 31°|23°
-       
-      </div>
-    </div>  
-  </div>
-</div>
-</div>
+          <div class="weather-forecast">
+            <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast-date">Thu</div>
+                <i class="fa-solid fa-cloud"></i>
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> 18° </span>
+                  <span class="weather-forecast-temperature-min"> 12° </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 <div class = signature> <a href="https://github.com/CodingKait/my-weather-app">Open Sourced</a>
  by Kaitlyn Freeaman </div>
 
