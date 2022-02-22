@@ -22,6 +22,23 @@ let month = months[now.getMonth()];
 
 let formattedDate = `${day}, ${month} ${date} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = `
+  <div class="row">
+    <div class="col-2">
+      <div class="weather-forecast-date">Thu</div>
+      <i class="fa-solid fa-cloud" width="42 "></i>
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max"> 18° </span>
+        <span class="weather-forecast-temperature-min"> 12° </span>
+      </div>
+    </div>
+  </div>;
+  `;
+}
+
 let h1 = document.querySelector("h1");
 h1.innerHTML = formattedDate;
 
@@ -156,6 +173,4 @@ function getCurrentPosition() {
 let button = document.querySelector("#geolocation");
 button.addEventListener("click", getCurrentPosition);
 
-//
-
-//
+displayForecast();
