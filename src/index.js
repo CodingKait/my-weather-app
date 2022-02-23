@@ -21,12 +21,17 @@ let months = [
 let month = months[now.getMonth()];
 
 let formattedDate = `${day}, ${month} ${date} ${hours}:${minutes}`;
+//
+//
+//
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class= "row">`;
-  let days = ["Thur", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -41,13 +46,21 @@ function displayForecast() {
   </div>
   `;
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "2e03d7d5a86e13a466013e0c083b84c1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 let h1 = document.querySelector("h1");
 h1.innerHTML = formattedDate;
-
+////for the top block info//
 function showTemp(response) {
   let currentTemp = document.querySelector("#current-temp");
   let city = document.querySelector("#location");
@@ -59,6 +72,7 @@ function showTemp(response) {
   let maxTemp = document.querySelector("#high");
   let minTemp = document.querySelector("#low");
   message.innerHTML = `Current Weather`;
+  //
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}°F`;
   city.innerHTML = response.data.name;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -69,8 +83,6 @@ function showTemp(response) {
   currentCondition.innerHTML = response.data.weather[0].description;
   minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°F`;
   maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°F |`;
-
-  console.log(response.data);
 }
 
 function search(event) {
@@ -134,8 +146,12 @@ function getF(event) {
 
 let tempToggleF = document.querySelector("#toggletoF");
 tempToggleF.addEventListener("click", getF);
-
 //
+//
+//
+//
+//For getting real time location!!!!///
+/////
 
 function showLocationTemp(response) {
   let searchInput = document.querySelector("#search-input");
@@ -178,5 +194,3 @@ function getCurrentPosition() {
 
 let button = document.querySelector("#geolocation");
 button.addEventListener("click", getCurrentPosition);
-
-displayForecast();
