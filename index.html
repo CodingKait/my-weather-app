@@ -25,38 +25,30 @@
     <img src = "src/weather images.jpg"/>
     <div class="container">
       
-          <form id="search-bar">
+       <div class="container">
       <div class = "row">
-        <div class = "col-9">
-   
-        <input type="text" autocomplete="off" placeholder="Enter your location" autofocus="on" id="search-input" class = "search-input"/>
+        <div class = "col-10">
+      <form id="search-bar">
+        <input type="text" autocomplete="off" placeholder="Enter your city" autofocus="on" id="search-input" class = "search-input"/>
         <i class="fa-solid fa-location-dot geolocation" id= "geolocation"></i>
       </div>
       </form>
       <div class = "col-2">
-      <a href = "#" class="temp-toggle" id="toggletoC">C°</a><span class = "divider">|</span><a href = "#" class="temp-toggle" id="toggletoF">F°</a>
+      <a href = "#" class="temp-toggle active" id="toggletoC">C°</a><span class = "divider">|</span><a href = "#" class="temp-toggle" id="toggletoF">F°</a>
       </div>
       </div>
-       </br>
-    <span>
-      <div class="exploreCitiesborder">         
-         <span class="exploreCityName">Tokyo 🗼</span>
-      <span class="exploreCityName">London 💂</span>
-      <span class="exploreCityName">New York 🗽</span>
-      <span class="exploreCityName">Paris 🥐</span>
-      </div>
-    </span>
-  </br>
       <h1>Wed, December 29</h1>
       <h2>
         <div class="row g-0">
           <div class="col-5"> <span class = "location" id = "location">
             NEW YORK CITY </span>
             <div class="row">
-              <div class="col"><span class = "current-weather" id = "message">Current Weather</span></div>
-              <div class="row">
+              <div class="col">
+                <span class = "current-weather" id = "message">Current Weather</span></div>
+              <div class="row g-0">
                 <div class="col">
-                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+
+                    
                   <span class = "current-condition" id="current-condition"> Rainy </span>
                 </div>
               </div>
@@ -67,15 +59,15 @@
             23°F
           </div>
             <div class="row"> 
-              <p><span class = "hilo" id = "high" >44°F | </span> <span class = "hilo low" id = "low" >19°F</span></p>
+              <p><span class = "hilo" id = "high" >19°F | </span> <span class = "hilo low" id = "low" >44°F</span></p>
             </div>
           </div>
-          <div class="col"> <span class = "weather-condition feels-like" id = "feels-like">
+          <div class="col"> <span class = "weather-condition" id = "feels-like">
             Feels like: 10°F </span>
             <div class="row">
               <div class="col"> <span class = "weather-condition humidity" id = "humidity">Humidity: 20% </span></div>
               <div class="row">
-                <div class="col"><span class = "weather-condition wind" id = "wind">Wind Speed: 1 m/s</span></div>
+                <div class="col"><span class = "weather-condition wind" id = "wind">Wind Speed: 1 mph</span></div>
               
             </div>
           </div>
@@ -86,15 +78,26 @@
        <div class="card book-quote">
   <div class="card-body">
     <blockquote class="blockquote mb-0">
-      <p>Wherever you go, no matter what the weather, alaways being your own sunshine</p>
-      <footer class="blockquote-footer">Anthony J. D'Angelo</footer>
+      <p id = quote>Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; there is really no such thing as bad weather, only different kinds of good weather.</p>
+      <footer class="blockquote-footer">
+        <span id = "author">John Ruskin</span>
+        <span id = "book" class = "book">
+          <cite title="Source Title"><em></em></cite>
+        </span>
+      </footer>
     </blockquote>
   </div>
 </div>
       </p>
-          <div class="weather-forecast" id ="forecast">
-            
-
+      
+      <span id ="weather-forecast" class = "forecast"><img class = "weather-forecast-icon" id = "weather-forecast-icon" src = "" /></span> 
+      
+    
+      </div>
+    </div>  
+  </div>
+</div>
+</div>
 <div class = signature> <a href="https://github.com/CodingKait/my-weather-app">Open Sourced</a>
  by Kaitlyn Freeaman </div>
 
