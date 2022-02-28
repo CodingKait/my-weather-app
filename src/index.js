@@ -145,6 +145,7 @@ function showLocationTemp(response) {
   minTemp.innerHTML = `${Math.round(fTempMin)}°F`;
   maxTemp.innerHTML = `${Math.round(fTempMax)}°F |`;
   searchInput.value = response.data.name;
+  
 
   getForecast(response.data.coord);
 }
