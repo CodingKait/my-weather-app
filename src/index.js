@@ -84,6 +84,18 @@ function showTemp(response) {
   maxTemp.innerHTML = `${Math.round(fTempMax)}°F |`;
   feelsLike.innerHTML = `Feels Like: ${Math.round(fFeelsLike)}°F`;
   wind.innerHTML = `Wind Speed: ${Math.round(fWind)} mph`;
+  document
+    .querySelector("#weather-forecast-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#weather-forecast-icon")
+    .setAttribute(
+      "alt",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+    );
 
   getForecast(response.data.coord);
 }
@@ -145,7 +157,6 @@ function showLocationTemp(response) {
   minTemp.innerHTML = `${Math.round(fTempMin)}°F`;
   maxTemp.innerHTML = `${Math.round(fTempMax)}°F |`;
   searchInput.value = response.data.name;
-  
 
   getForecast(response.data.coord);
 }
@@ -188,9 +199,7 @@ function displayForecast(response) {
         <p class="card-text forecast" id = "weather-condition-forecast">${
           forecastDay.weather[0].description
         } <br/>
-          <img class = "weather-forecast-icon" id = "weather-forecast-icon" src = "images/${
-            forecastDay.weather[0].icon
-          }.png" />
+          <img class = "weather-forecast-icon" id = "weather-forecast-icon"  />
           <br/> <span id = "weather-condition-high" >${Math.round(
             forecastDay.temp.max
           )}°F | </span><span id = "weather-condition-low">${Math.round(
