@@ -183,32 +183,31 @@ button.addEventListener("click", getCurrentPosition);
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let forecastHTML = `<span id ="weather-forecast"><div class=" row row-cols-1 mb-0 row-cols-md-6 g-4 card-design">`;
+  let forecastHTML = `<span id ="weather-forecast"><div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        ` <div class="col-sm-2">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title" id = "weather-forecast-date">${formatDay(
-          forecastDay.dt
-        )}</h5>
+        ` <div class="col-2">
+        <div class="weather-forecast-da">
+           <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+
         <hr/>
         <p class="card-text forecast" id = "weather-condition-forecast">${
           forecastDay.weather[0].description
         } <br/>
-          <img class = "weather-forecast-icon" id = "weather-forecast-icon"  />
-          <br/> <span id = "weather-condition-high" >${Math.round(
-            forecastDay.temp.max
-          )}°F | </span><span id = "weather-condition-low">${Math.round(
+        <img class = "weather-forecast-icon" id = "weather-forecast-icon" src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"/>
+      <br/> <span id = "weather-condition-high" >${Math.round(
+        forecastDay.temp.max
+      )}°F | </span><span id = "weather-condition-low">${Math.round(
           forecastDay.temp.min
         )}°F</span>
         </p>
         
-      </div>
-    </div>
+    </div>  
   </div>`;
     }
   });
