@@ -90,7 +90,6 @@ a:hover {
   color: tan;
 }
 
-
 .signature {
   position: relative;
   margin: 40px 5px;
@@ -113,4 +112,5 @@ a:hover {
 }
 
 .geolocation:hover {
-  cursor: pointer
+  cursor: pointer;
+}
