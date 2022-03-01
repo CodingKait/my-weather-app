@@ -84,18 +84,6 @@ function showTemp(response) {
   maxTemp.innerHTML = `${Math.round(fTempMax)}°F |`;
   feelsLike.innerHTML = `Feels Like: ${Math.round(fFeelsLike)}°F`;
   wind.innerHTML = `Wind Speed: ${Math.round(fWind)} mph`;
-  document
-    .querySelector("#weather-forecast-icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  document
-    .querySelector("#weather-forecast-icon")
-    .setAttribute(
-      "alt",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
-    );
 
   getForecast(response.data.coord);
 }
